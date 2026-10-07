@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ifem-blue: #0066B1;
+  --color-ifem-blue-hover: #005391;
+  --color-ifem-blue-light: #EBF4FC;
+  --color-ifem-navy: #112156;
+  --color-ifem-navy-dark: #0a1438;
+  --color-ifem-navy-light: #182e75;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    background-color: #F8FAFC;
+    color: #112156;
+  }
+}

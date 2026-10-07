@@ -1,0 +1,6 @@
+{
+  "name": "IFEM - Institut de Formation des Enseignants à Madagascar",
+  "description": "Site vitrine institutionnel de l'Institut de Formation des Enseignants à Madagascar (IFEM). Formation, professionnalisation et FOAD.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
