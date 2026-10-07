@@ -13,6 +13,8 @@ interface PhotoProps {
   objectPosition?: string;
   className?: string;
   eager?: boolean;
+  /** Zoom lent et continu sur l'image (pour l'accueil). */
+  kenBurns?: boolean;
 }
 
 const aspectClasses: Record<NonNullable<PhotoProps['aspectRatio']>, string> = {
@@ -33,21 +35,26 @@ export const Photo: React.FC<PhotoProps> = ({
   objectPosition = 'center',
   className = '',
   eager = false,
+  kenBurns = false,
 }) => {
   const hasCaption = Boolean(title || subtitle || category);
 
   return (
     <figure
-      className={`relative overflow-hidden rounded-xl border border-[#112156]/10 bg-[#112156]/5 shadow-sm ${aspectClasses[aspectRatio]} ${className}`}
+      className={`group relative overflow-hidden rounded-xl border border-[#112156]/10 bg-[#112156]/5 shadow-sm ${aspectClasses[aspectRatio]} ${className}`}
     >
       <img
         src={src}
         alt={alt}
         loading={eager ? 'eager' : 'lazy'}
         decoding="async"
-        className="absolute inset-0 w-full h-full object-cover"
+        className={`absolute inset-0 w-full h-full object-cover ${
+          kenBurns ? 'animate-kenburns' : 'transition-transform duration-700 ease-out group-hover:scale-105'
+        }`}
         style={{ objectPosition }}
       />
+
+      <span className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/3 -skew-x-12 bg-white/25 blur-md opacity-0 group-hover:opacity-100 group-hover:translate-x-[420%] transition-all duration-1000 ease-out" />
 
       {hasCaption && (
         <figcaption className="absolute inset-x-0 bottom-0 p-3 sm:p-4 pt-12 bg-gradient-to-t from-[#0a1438]/90 via-[#0a1438]/55 to-transparent text-white">

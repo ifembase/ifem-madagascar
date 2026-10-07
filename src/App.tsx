@@ -17,6 +17,7 @@ import { PerspectivesSection } from './sections/PerspectivesSection';
 import { GallerySection } from './sections/GallerySection';
 import { RepèresSection } from './sections/RepèresSection';
 import { ContactSection } from './sections/ContactSection';
+import { ScrollEffects } from './components/ScrollEffects';
 import { IFEM_IDENTITY } from './data/ifemData';
 import { MessageCircle, ArrowUp } from 'lucide-react';
 
@@ -38,6 +39,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F8FAFC] text-[#112156] font-sans selection:bg-[#0066B1] selection:text-white">
+      <ScrollEffects />
+
       {/* Navigation */}
       <Navbar />
 
@@ -110,16 +113,19 @@ export default function App() {
         )}
 
         {/* Direct WhatsApp Quick Chat Bubble */}
+        <div className="relative">
+          <span className="absolute inset-0 rounded-full bg-[#0066B1] opacity-40 animate-ping" />
         <a
           href={`https://wa.me/${IFEM_IDENTITY.whatsappRaw}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="p-3.5 rounded-full bg-[#0066B1] hover:bg-[#005391] text-white shadow-xl transition-all duration-200 hover:scale-105 flex items-center justify-center cursor-pointer border-2 border-white"
+          className="relative p-3.5 rounded-full bg-[#0066B1] hover:bg-[#005391] text-white shadow-xl transition-all duration-200 hover:scale-105 flex items-center justify-center cursor-pointer border-2 border-white"
           aria-label="Ouvrir WhatsApp direct IFEM"
           title="WhatsApp direct IFEM"
         >
           <MessageCircle className="w-6 h-6 text-white" />
         </a>
+        </div>
       </div>
     </div>
   );

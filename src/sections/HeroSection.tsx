@@ -33,13 +33,13 @@ export const HeroSection: React.FC = () => {
           backgroundSize: '32px 32px',
         }}
       />
-      <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#0066B1]/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#0066B1]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#0066B1]/20 rounded-full blur-3xl pointer-events-none animate-blob" />
+      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#0066B1]/10 rounded-full blur-3xl pointer-events-none animate-blob [animation-delay:-7s]" />
 
       <Container size="xl" className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Main Hero Copy */}
-          <div className="lg:col-span-7 flex flex-col items-start">
+          <div className="lg:col-span-7 flex flex-col items-start hero-stagger">
             {/* Official Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-[#0066B1]/60 text-white text-xs sm:text-sm font-semibold mb-6 backdrop-blur-xs shadow-xs">
               <span className="w-2 h-2 rounded-full bg-[#0066B1] animate-pulse" />
@@ -48,8 +48,8 @@ export const HeroSection: React.FC = () => {
 
             {/* Main Title */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
-              Construisons la{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#EBF4FC] to-[#0066B1]">
+              Contruison la{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#EBF4FC] to-[#0066B1] animate-text-shimmer">
                 société de demain
               </span>
             </h1>
@@ -104,8 +104,8 @@ export const HeroSection: React.FC = () => {
           </div>
 
           {/* Right Visual Composition / Institutional Photography Placeholder */}
-          <div className="lg:col-span-5">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
+          <div className="lg:col-span-5 hero-visual">
+            <div className="relative mx-auto max-w-md lg:max-w-none animate-float">
               {/* Decorative accent backing cards */}
               <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-[#0066B1] to-[#112156] blur-lg opacity-60" />
 
@@ -137,6 +137,7 @@ export const HeroSection: React.FC = () => {
                   aspectRatio="photo"
                   className="mt-4 border-[#0066B1]/40"
                   eager
+                  kenBurns
                 />
 
                 {/* Micro highlights under image */}

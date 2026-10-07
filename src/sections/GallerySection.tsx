@@ -63,11 +63,12 @@ export const GallerySection: React.FC = () => {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredItems.map((item) => (
+          {filteredItems.map((item, index) => (
             <div
               key={item.id}
+              style={{ animationDelay: `${Math.min(index, 12) * 55}ms` }}
               onClick={() => setActiveModalItem(item)}
-              className="group cursor-pointer rounded-xl overflow-hidden bg-white border border-[#112156]/10 shadow-2xs hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-[#0066B1]"
+              className="animate-pop-in group cursor-pointer rounded-xl overflow-hidden bg-white border border-[#112156]/10 shadow-2xs hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-[#0066B1]"
             >
               <div className="relative">
                 <div className="aspect-video overflow-hidden bg-[#112156]/5">

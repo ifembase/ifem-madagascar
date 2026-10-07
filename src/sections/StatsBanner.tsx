@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from '../components/ui/Container';
+import { CountUp } from '../components/ui/CountUp';
 import { Users, MapPin, Award, BookOpen } from 'lucide-react';
 
 export const StatsBanner: React.FC = () => {
@@ -40,16 +41,16 @@ export const StatsBanner: React.FC = () => {
               return (
                 <div
                   key={index}
-                  className={`flex items-start gap-4 ${
+                  className={`group flex items-start gap-4 ${
                     index > 0 ? 'pt-4 sm:pt-0 sm:pl-6' : ''
                   }`}
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#EBF4FC] text-[#0066B1] border border-[#0066B1]/20 flex items-center justify-center shrink-0 shadow-xs">
+                  <div className="group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 w-12 h-12 rounded-xl bg-[#EBF4FC] text-[#0066B1] border border-[#0066B1]/20 flex items-center justify-center shrink-0 shadow-xs">
                     <Icon className="w-6 h-6 text-[#0066B1]" />
                   </div>
                   <div>
                     <span className="text-2xl sm:text-3xl font-extrabold text-[#112156] tracking-tight block">
-                      {item.value}
+                      <CountUp value={item.value} />
                     </span>
                     <h3 className="text-xs sm:text-sm font-bold text-[#112156] leading-snug mt-0.5">
                       {item.label}

@@ -97,7 +97,7 @@ export const Navbar: React.FC = () => {
 
       {/* Main sticky navigation */}
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 bg-white ${
+        className={`sticky top-0 z-50 animate-slide-down transition-all duration-300 bg-white ${
           isScrolled
             ? 'shadow-md border-b border-[#112156]/10 py-2.5'
             : 'border-b border-[#112156]/10 py-3.5'
@@ -117,7 +117,7 @@ export const Navbar: React.FC = () => {
               <img
                 src={LOGOS.transparent}
                 alt="IFEM — Institut de Formation des Enseignants à Madagascar"
-                className="h-12 sm:h-14 w-auto object-contain"
+                className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 width={866}
                 height={288}
               />
