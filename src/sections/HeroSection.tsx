@@ -48,9 +48,9 @@ export const HeroSection: React.FC = () => {
 
             {/* Main Title */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
-              Former mieux pour{' '}
+              Construisons la{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#EBF4FC] to-[#0066B1]">
-                mieux éduquer
+                société de demain
               </span>
             </h1>
 
